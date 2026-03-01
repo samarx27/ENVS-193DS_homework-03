@@ -1,0 +1,15 @@
+---
+title: "Homework03"
+format: html
+editor: visual
+---
+## 1. Set Up
+```{r}
+#| label: Set Up
+#| message: false
+
+```
+
+
+
+[html link]()
