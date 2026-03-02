@@ -83,3 +83,24 @@ Figure 1. This figure shows the distribution of recorded wake up times between s
 Figure 2. This figure shows the distribution of recorded wake up times for each day from 01/25/2026 to 03/01/2026, denoted by the gold points.
 
 # Problem 3. Affective Visualization
+
+## a. 
+I think an affective visualization could look be similar to figure two, where instead of the points and axis, it could look like a sunrise where each point is supposed to fall, given that the data is showing when I wake up. 
+
+## b. 
+
+## c. 
+
+## d. 
+
+## e. 
+
+# Problem 4. Statistical Critique 
+
+## a. 
+
+## b. 
+
+## c. 
+
+## d. 
