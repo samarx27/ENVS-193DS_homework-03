@@ -3,7 +3,7 @@ title: "Homework03"
 format: html
 editor: visual
 ---
-## 1. Set Up
+## Set Up
 ```{r}
 #| label: Set Up
 #| message: false
@@ -23,7 +23,6 @@ my_data <- read_csv(
   ))
 ```
 
-
-
 [html link](https://samarx27.github.io/ENVS-193DS_homework-03/)
 
+## Problem 1. 
