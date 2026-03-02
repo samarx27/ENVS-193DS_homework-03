@@ -7,9 +7,23 @@ editor: visual
 ```{r}
 #| label: Set Up
 #| message: false
-
+library(tidyverse)
+library(here)
+library(janitor)
+library(readxl)
+salinity <- read_csv(
+  here(
+    "data",
+    "salinity-pickleweed.csv"
+  ))
+my_data <- read_csv(
+  here(
+    "data",
+    "my_data Sheet2.csv"
+  ))
 ```
 
 
 
-[html link]()
+[html link](https://samarx27.github.io/ENVS-193DS_homework-03/)
+
