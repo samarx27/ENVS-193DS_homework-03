@@ -3,7 +3,9 @@ title: "Homework03"
 format: html
 editor: visual
 ---
-## Set Up
+
+# Set Up
+
 ```{r}
 #| label: Set Up
 #| message: false
@@ -25,4 +27,56 @@ my_data <- read_csv(
 
 [html link](https://samarx27.github.io/ENVS-193DS_homework-03/)
 
-## Problem 1. 
+# Problem 1. Slough Soil Salinity
+
+## a.
+
+## b.
+
+## c.
+
+## d.
+
+## e.
+
+## f.
+
+# Problem 2. Personal Data
+
+## a.
+```{r}
+#| label: Jitter Plot displaying wake up time for school and non school days
+my_data_clean <- my_data |> #labeling new data frame
+clean_names() #cleaned names to only include lower case letters and underscores
+ggplot(data = my_data_clean, #using my_data_clean data frame
+aes(x = school_day_yes_no, #placing school_day_yes_no on the x-axis
+y = wake_up_time_hrs_min, #placing wake_up_time_hrs_min on the y-axis
+color = school_day_yes_no)) + #color by school_day_yes_no
+geom_boxplot() + #creating a boxplot
+labs(x = "School Day", #labeling the x-axis as School Day
+y = "Wake Up time (hrs:min)", #labeling the y-axis as Wake Up time (hrs:min)
+title = "Wake Up Time for School Days vs Non-School Days", #creating title
+subtitle = "03/01/2026") + #creating subtitle
+geom_jitter() + #creating jittered points
+theme_light() + #changing theme to light
+scale_color_manual(values = c("yes" = "blue4",
+"no" = "red4")) + #changing colors based on whether or not it is a school day
+theme(legend.position = "none") #removing the legend
+```
+
+```{r}
+#| label: Time series plot for wake up time for each day
+ggplot(data = my_data_clean, #determining data frame
+aes(x = date, #placing these observations on the x-axis
+y = wake_up_time_hrs_min)) + #placing these observations on the x-axis
+geom_point(color = "gold") + #making the points gold
+labs(x = "Date", #labeling the x-axis
+y = "Wake Up time (hrs:min)", #labeling the y-axis
+title = "Wake Up Time for Each Day", #creating a title
+subtitle = "03/01/2026") + #creating a subtitle
+theme_light() #changing the theme to light
+```
+
+## b.
+
+# Problem 3. Affective Visualization
