@@ -31,9 +31,15 @@ my_data <- read_csv(
 
 ## a.
 
-A Pearson's correlation test would determine the strength of the relationship between salinity and California pickleweed biomass because this type of correlation is meant for continuous, normally distributed variables. 
+A Pearson's correlation test would determine the strength of the relationship between salinity and California pickleweed biomass because this type of correlation is meant for continuous variables. However, this also needs the data to be normally distributed. 
 
 ## b.
+```{r}
+ggplot(data = salinity, 
+       aes(x = salinity_mS_cm, 
+           y = pickleweed)) +
+  geom_point() 
+```
 
 ## c.
 
