@@ -56,7 +56,7 @@ theme_minimal()
 cor.test(salinity$salinity_mS_cm, salinity$pickleweed, 
          method = "pearson")
 ```
- 
+In the plot in 1b, the linear relationship between the two variables is tested and determined to exist. In the correlation test above, which is a Pearson Correlation test, the strength of this relationship is tested. Based on the outputs of this test, the variables have a moderate strength relationship between them. 
 
 ## d.
 
