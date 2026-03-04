@@ -59,6 +59,7 @@ cor.test(salinity$salinity_mS_cm, salinity$pickleweed,
 In the plot in 1b, the linear relationship between the two variables is tested and determined to exist. In the correlation test above, which is a Pearson Correlation test, the strength of this relationship is tested. Based on the outputs of this test, the variables have a moderate strength relationship between them. 
 
 ## d.
+To evaluate the existence of the relationship between pickleweed biomass and soil salinity, I used a linear model, which indicated that there may be a positive relationship between the variables. To evaluate the strength of the relationship between pickleweed biomass and soil salinity, I used Pearson's Correlation test, which resulted in the variables having moderate strength relationship between the variables (Pearson's r = 0.53, t(21) = 2.90, p = 0.009, $\alpha$ = 0.05). 
 
 ## e.
 
