@@ -63,6 +63,8 @@ To evaluate the existence of the relationship between pickleweed biomass and soi
 
 ## e.
 
+Based on the data, pickleweed biomass in grams and salinity (mS/cm) have a postive relationship, meaning that, with higher salinity, there will be more biomass of pickleweek. This indicates that there will be a higher planting success at a site with higher salinity, though the strength of this relationship is only moderate. 
+
 ## f.
 
 # Problem 2. Personal Data
