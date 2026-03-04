@@ -31,7 +31,7 @@ my_data <- read_csv(
 
 ## a.
 
-A Pearson's correlation test would determine the strength of the relationship between salinity and California pickleweed biomass because this type of correlation is meant for continuous variables. However, this also needs the data to be normally distributed. Alternatively, the strength of the relationship could be tested through a Spearman's rank correlation, which measures the strength and direction of the relationship between the variables.
+A Pearson's correlation test would determine the strength of the relationship between salinity and California pickleweed biomass because this type of correlation is meant for continuous variables. However, this also needs the data to be normally distributed. Alternatively, the strength of the relationship could be tested through a Spearman's rank correlation, which measures the strength and direction of the relationship between the variables and is usually used for non-parametric variables.
 
 ## b.
 
@@ -46,6 +46,11 @@ theme_minimal()
 ```
 
 ## c.
+
+```{r}
+cor.test(salinity$salinity_mS_cm, salinity$pickleweed, 
+         method = "pearson")
+```
 
 ## d.
 
@@ -115,6 +120,8 @@ I think an affective visualization could look be similar to figure two, where in
 ## a.
 
 The test in this paper is a one-way ANOVA test, though it also includes multiple regressions, linear regressions, and pearson correlations. Seastar abundance was the response variable and the predictor variables were the linear rugosity, coral juvenile density, and average slope.
+
+![](images/Screenshot 2026-03-03 at 6.25.36 PM.png)
 
 ## b.
 
