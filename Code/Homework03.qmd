@@ -36,15 +36,10 @@ A Pearson's correlation test would determine the strength of the relationship be
 
 ## b.
 ```{r}
-salinity_lm <- lm(
-  pickleweed~salinity_mS_cm, 
-  data = salinity
-)
-
-summary(salinity_lm)
-ggpredict(salinity_lm, 
-          terms = "salinity_mS_cm") |> 
-  plot(show_data = TRUE) +
+ggplot(data = salinity, 
+       aes(x = salinity_mS_cm, 
+           y = pickleweed)) +
+  geom_point(color = "red") +
   labs(x = "Salinity (mS/cm)", 
        y = "Pickleweed Biomass (g)") +
 theme_minimal()
@@ -53,17 +48,33 @@ theme_minimal()
 ## c.
 
 ```{r}
+ggplot(data = salinity, 
+       aes(sample = salinity$salinity_mS_cm)) +
+  geom_qq() +
+  geom_qq_line() +
+theme_minimal()
+```
+
+```{r}
+ggplot(data = salinity, 
+       aes(sample = salinity$pickleweed)) +
+  geom_qq() +
+  geom_qq_line() +
+theme_minimal()
+```
+
+```{r}
 cor.test(salinity$salinity_mS_cm, salinity$pickleweed, 
          method = "pearson")
 ```
-In the plot in 1b, the linear relationship between the two variables is tested and determined to exist. In the correlation test above, which is a Pearson Correlation test, the strength of this relationship is tested. Based on the outputs of this test, the variables have a moderate strength relationship between them. 
+In the plot in 1b, the linear relationship between the two variables is tested and determined to exist. I used QQ plots for each column to test the normality condition, which was concluded to be normal. In the correlation test above, which is a Pearson Correlation test, the strength of this relationship is tested and is determined to be of moderate strength (Pearson's r = 0.53, t(21) = 2.90, p = 0.009, $\alpha$ = 0.05). 
 
-## d.
-To evaluate the asumption that the predictor variable (salinity) does not predict the response variable (pickleweed), I used a linear model, which indicated that there may be a positive relationship between the variables. To evaluate the strength of the relationship between pickleweed biomass and soil salinity, I used Pearson's Correlation test, which resulted in the variables having moderate strength relationship between the variables (Pearson's r = 0.53, t(21) = 2.90, p = 0.009, $\alpha$ = 0.05). 
+## d. 
+To evaluate the assumption that the predictor variable (salinity) does not predict the response variable (pickleweed), I used a scatter plot, which indicated that there may be a positive relationship between the variables. To evaluate the strength of the relationship between pickleweed biomass and soil salinity, I used Pearson's Correlation test, which resulted in the variables having moderate strength relationship between the variables (Pearson's r = 0.53, t(21) = 2.90, p = 0.009, $\alpha$ = 0.05). 
 
 ## e.
 
-Based on the data, pickleweed biomass in grams and salinity (mS/cm) have a postive relationship, meaning that, with higher salinity, there will be more biomass of pickleweed. This indicates that there will be a higher planting success at a site with higher salinity, though the strength of this relationship is only moderate. 
+Based on the data, pickleweed biomass in grams and salinity (mS/cm) have a positive relationship, meaning that, with higher salinity, there will be more biomass of pickleweed. This indicates that there will be a higher planting success at a site with higher salinity, though the strength of this relationship is only moderate. 
 
 ## f.
 
