@@ -59,13 +59,19 @@ cor.test(salinity$salinity_mS_cm, salinity$pickleweed,
 In the plot in 1b, the linear relationship between the two variables is tested and determined to exist. In the correlation test above, which is a Pearson Correlation test, the strength of this relationship is tested. Based on the outputs of this test, the variables have a moderate strength relationship between them. 
 
 ## d.
-To evaluate the existence of the relationship between pickleweed biomass and soil salinity, I used a linear model, which indicated that there may be a positive relationship between the variables. To evaluate the strength of the relationship between pickleweed biomass and soil salinity, I used Pearson's Correlation test, which resulted in the variables having moderate strength relationship between the variables (Pearson's r = 0.53, t(21) = 2.90, p = 0.009, $\alpha$ = 0.05). 
+To evaluate the asumption that the predictor variable (salinity) does not predict the response variable (pickleweed), I used a linear model, which indicated that there may be a positive relationship between the variables. To evaluate the strength of the relationship between pickleweed biomass and soil salinity, I used Pearson's Correlation test, which resulted in the variables having moderate strength relationship between the variables (Pearson's r = 0.53, t(21) = 2.90, p = 0.009, $\alpha$ = 0.05). 
 
 ## e.
 
-Based on the data, pickleweed biomass in grams and salinity (mS/cm) have a postive relationship, meaning that, with higher salinity, there will be more biomass of pickleweek. This indicates that there will be a higher planting success at a site with higher salinity, though the strength of this relationship is only moderate. 
+Based on the data, pickleweed biomass in grams and salinity (mS/cm) have a postive relationship, meaning that, with higher salinity, there will be more biomass of pickleweed. This indicates that there will be a higher planting success at a site with higher salinity, though the strength of this relationship is only moderate. 
 
 ## f.
+
+```{r}
+cor.test(salinity$salinity_mS_cm, salinity$pickleweed, 
+         method = "spearman")
+```
+Both tests would have led me to make the same decision (rejecting the null hypothesis) because the correlation coefficients are similar values and indicate a moderate relationship. 
 
 # Problem 2. Personal Data
 
