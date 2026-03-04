@@ -125,9 +125,11 @@ The test in this paper is a one-way ANOVA test, though it also includes multiple
 
 ## b. 
 
-I would say the authors did well in representing their statistics in figures. Though these figures do not represent the ANOVA test specifically, the adequately represent the linear regression and selectivity coefficients, as the x- and y- axes are in logical positions and the figures do show the underlying data in their model predictions. However, these figures do not include summary statistics. 
+I would say the authors did well in representing their statistics in figures. The figures adequately represent the linear regression and selectivity coefficients, as the x- and y- axes are in logical positions and the figures do show the underlying data in their model predictions. However, these figures do not include summary statistics. 
 
 ## c.
-
+I would say there is minimal "visual clutter" overall. I think the data to ink ratio is relatively high, as there are few elements that aren't directly displaying the data. 
 
 ## d.
+
+The authors could add more information to the caption, which would make the figures more digestible and bring clarity to the point of the figure. For figure 5, it might be beneficial to make the axes tick labels clearer. 
