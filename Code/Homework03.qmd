@@ -13,6 +13,7 @@ library(tidyverse)
 library(here)
 library(janitor)
 library(readxl)
+library(ggeffects)
 salinity <- read_csv(
   here(
     "data",
@@ -34,12 +35,16 @@ my_data <- read_csv(
 A Pearson's correlation test would determine the strength of the relationship between salinity and California pickleweed biomass because this type of correlation is meant for continuous variables. However, this also needs the data to be normally distributed. Alternatively, the strength of the relationship could be tested through a Spearman's rank correlation, which measures the strength and direction of the relationship between the variables and is usually used for non-parametric variables.
 
 ## b.
-
 ```{r}
-ggplot(data = salinity, 
-       aes(x = salinity_mS_cm, 
-           y = pickleweed)) +
-  geom_point(color = "red") +
+salinity_lm <- lm(
+  pickleweed~salinity_mS_cm, 
+  data = salinity
+)
+
+summary(salinity_lm)
+ggpredict(salinity_lm, 
+          terms = "salinity_mS_cm") |> 
+  plot(show_data = TRUE) +
   labs(x = "Salinity (mS/cm)", 
        y = "Pickleweed Biomass (g)") +
 theme_minimal()
@@ -51,6 +56,7 @@ theme_minimal()
 cor.test(salinity$salinity_mS_cm, salinity$pickleweed, 
          method = "pearson")
 ```
+ 
 
 ## d.
 
