@@ -9,20 +9,20 @@ editor: visual
 ```{r}
 #| label: Set Up
 #| message: false
-library(tidyverse)
-library(here)
-library(janitor)
-library(readxl)
-library(ggeffects)
-salinity <- read_csv(
-  here(
-    "data",
-    "salinity-pickleweed.csv"
+library(tidyverse) #loading in tidyverse
+library(here) #loading in here
+library(janitor) #loading in janitor
+library(readxl) #loading in readxl
+library(ggeffects) #loading in ggeffects
+salinity <- read_csv( #creating salinity data frame
+  here( #indicating the path to find the data
+    "data", #indicating it is in the data folder
+    "salinity-pickleweed.csv" #indicating that it is this file
   ))
-my_data <- read_csv(
-  here(
-    "data",
-    "my_data Sheet2.csv"
+my_data <- read_csv( #creating my_data data frame
+  here( #indicating the path to find the data
+    "data", #indicating it is in the data folder
+    "my_data Sheet2.csv" #indicating that it is this file
   ))
 ```
 
@@ -36,38 +36,39 @@ A Pearson's correlation test would determine the strength of the relationship be
 
 ## b.
 ```{r}
-ggplot(data = salinity, 
-       aes(x = salinity_mS_cm, 
-           y = pickleweed)) +
-  geom_point(color = "red") +
-  labs(x = "Salinity (mS/cm)", 
-       y = "Pickleweed Biomass (g)") +
-theme_minimal()
+ggplot(data = salinity, #creating plot with salinity data frame
+       aes(x = salinity_mS_cm, #salinity on the x axis
+           y = pickleweed)) + #pickleweed data on the y axis
+  geom_point(color = "red") + #changing point colors to red
+  labs(x = "Salinity (mS/cm)", #labeling x-axis 
+       y = "Pickleweed Biomass (g)") + #labeling y-axis
+theme_minimal() #changing theme to minimal
 ```
 
 ## c.
 
 ```{r}
-ggplot(data = salinity, 
-       aes(sample = salinity$salinity_mS_cm)) +
-  geom_qq() +
-  geom_qq_line() +
-theme_minimal()
+ggplot(data = salinity, #creating plot with salinity data frame
+       aes(sample = salinity$salinity_mS_cm)) + #isolating the salinity column as the sample
+  geom_qq() + #creating qq plot
+  geom_qq_line() + #adding qq line
+theme_minimal() #changing theme to minimal
 ```
 
 ```{r}
-ggplot(data = salinity, 
-       aes(sample = salinity$pickleweed)) +
-  geom_qq() +
-  geom_qq_line() +
-theme_minimal()
+ggplot(data = salinity, #creating plot with salinity data frame
+       aes(sample = salinity$pickleweed)) + #isolating the pickleweed column as the sample
+  geom_qq() + #creating qq plot
+  geom_qq_line() + #adding qq line
+theme_minimal() #changing theme to minimal
 ```
 
 ```{r}
-cor.test(salinity$salinity_mS_cm, salinity$pickleweed, 
-         method = "pearson")
+cor.test(salinity$salinity_mS_cm, #running correlation test using salinity data frame, specifically salinity column
+         salinity$pickleweed, #running correlation test using salinity data frame, specifically pickleweed column
+         method = "pearson") #using pearson correlation 
 ```
-In the plot in 1b, the linear relationship between the two variables is tested and determined to exist. I used QQ plots for each column to test the normality condition, which was concluded to be normal. In the correlation test above, which is a Pearson Correlation test, the strength of this relationship is tested and is determined to be of moderate strength (Pearson's r = 0.53, t(21) = 2.90, p = 0.009, $\alpha$ = 0.05). 
+In the plot in 1b, the linear relationship between the two variables is tested and determined to exist. I used QQ plots for each column to test the normality condition, which was normal. In the correlation test above, which is a Pearson Correlation test, the strength of this relationship is tested and is determined to be of moderate strength (Pearson's r = 0.53, t(21) = 2.90, p = 0.009, $\alpha$ = 0.05). 
 
 ## d. 
 To evaluate the assumption that the predictor variable (salinity) does not predict the response variable (pickleweed), I used a scatter plot, which indicated that there may be a positive relationship between the variables. To evaluate the strength of the relationship between pickleweed biomass and soil salinity, I used Pearson's Correlation test, which resulted in the variables having moderate strength relationship between the variables (Pearson's r = 0.53, t(21) = 2.90, p = 0.009, $\alpha$ = 0.05). 
@@ -79,10 +80,11 @@ Based on the data, pickleweed biomass in grams and salinity (mS/cm) have a posit
 ## f.
 
 ```{r}
-cor.test(salinity$salinity_mS_cm, salinity$pickleweed, 
-         method = "spearman")
+cor.test(salinity$salinity_mS_cm, #running correlation test using salinity data frame, specifically salinity column 
+         salinity$pickleweed, #running correlation test using salinity data frame, specifically pickleweed column
+         method = "spearman") #using spearman correlation 
 ```
-Both tests would have led me to make the same decision (rejecting the null hypothesis) because the correlation coefficients are similar values and indicate a moderate relationship. 
+Both tests (Pearson's Correlation and Spearman's Correlation) would have led me to make the same decision (rejecting the null hypothesis) because the correlation coefficients are similar values that are close to 0.6 and indicate a moderate strength relationship. 
 
 # Problem 2. Personal Data
 
@@ -118,9 +120,9 @@ labs(x = "Date", #labeling the x-axis
 y = "Wake Up time (hrs:min)", #labeling the y-axis
 title = "Wake Up Time for Each Day", #creating a title
 subtitle = "03/01/2026") + #creating a subtitle
-theme_light() #changing the theme to light
+theme_light() + #changing the theme to light
+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1, size = 8)) #changing the text on the x-axis to be vertical and smaller 
 ```
-
 ## b.
 
 Figure 1. This figure shows the distribution of recorded wake up times between school days, which is denoted by the blue points, and non-school days, which is denoted by the red points. Additionally, the figure shows the medians and quartiles for each type of day, represented by the boxes and lines, indicating that the median wake up time is later on non-school days than on school days.
