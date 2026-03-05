@@ -2,8 +2,13 @@
 title: "Homework03"
 author: "Sequoia Marx"
 date: "3/1/2026"
-format: html
 editor: visual
+format:
+  html:
+    toc: true # use this to display a table of contents
+execute:
+  message: false # use this to make sure messages don't show up
+  warning: false # use this to make sure warnings don't show up
 ---
 
 # Set Up
@@ -147,7 +152,8 @@ I think an affective visualization could look be similar to figure two, where in
 
 ![](images/Sketch.png)
 
-## c. 
+## c.
+
 ![](images/DraftAffect.png)
 
 ## d.
