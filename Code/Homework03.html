@@ -150,16 +150,17 @@ window.Quarto = {
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor) <span class="co">#loading in janitor</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl) <span class="co">#loading in readxl</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggeffects) <span class="co">#loading in ggeffects</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>salinity <span class="ot">&lt;-</span> <span class="fu">read_csv</span>( <span class="co">#creating salinity data frame</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">here</span>( <span class="co">#indicating the path to find the data</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">"data"</span>, <span class="co">#indicating it is in the data folder</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"salinity-pickleweed.csv"</span> <span class="co">#indicating that it is this file</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  ))</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>( <span class="co">#creating my_data data frame</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">here</span>( <span class="co">#indicating the path to find the data</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">"data"</span>, <span class="co">#indicating it is in the data folder</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"my_data Sheet2.csv"</span> <span class="co">#indicating that it is this file</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  ))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr) <span class="co">#loading in knitr</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>salinity <span class="ot">&lt;-</span> <span class="fu">read_csv</span>( <span class="co">#creating salinity data frame</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">here</span>( <span class="co">#indicating the path to find the data</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">"data"</span>, <span class="co">#indicating it is in the data folder</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">"salinity-pickleweed.csv"</span> <span class="co">#indicating that it is this file</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>my_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>( <span class="co">#creating my_data data frame</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">here</span>( <span class="co">#indicating the path to find the data</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">"data"</span>, <span class="co">#indicating it is in the data folder</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">"my_data Sheet2.csv"</span> <span class="co">#indicating that it is this file</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  ))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><a href="https://samarx27.github.io/ENVS-193DS_homework-03/">GitHub Link</a></p>
 </section>
@@ -330,11 +331,7 @@ sample estimates:
 </section>
 <section id="b.-2" class="level2">
 <h2 class="anchored" data-anchor-id="b.-2">b.</h2>
-<p><img src="images/Screenshot%202026-03-04%20at%208.50.37%20PM.png" class="img-fluid"></p>
-</section>
-<section id="c.-1" class="level2">
-<h2 class="anchored" data-anchor-id="c.-1">c.</h2>
-<p><img src="images/Screenshot%202026-03-04%20at%208.51.19%20PM.png" class="img-fluid"></p>
+<p><img src="images/Screenshot%202026-03-04%20at%208.50.37%20PM.png" class="img-fluid"> <img src="path/to/Images/Screenshot%202026-03-04%20at%208.50.37%20PM.png" class="img-fluid" alt="Alt text"> ## c.&nbsp;<img src="path/to/Images/Screenshot%202026-03-04%20at%208.51.19%20PM.png" class="img-fluid" alt="Alt text"></p>
 </section>
 <section id="d.-1" class="level2">
 <h2 class="anchored" data-anchor-id="d.-1">d.</h2>
@@ -350,14 +347,14 @@ sample estimates:
 <section id="a.-3" class="level2">
 <h2 class="anchored" data-anchor-id="a.-3">a.</h2>
 <p>The test in this paper is a one-way ANOVA test, though it also includes multiple regressions, linear regressions, and pearson correlations. Seastar abundance was the response variable and the predictor variables were the linear rugosity, coral juvenile density, and average slope.</p>
-<p><img src="images/Screenshot%202026-03-03%20at%206.30.19%20PM.png" class="img-fluid"></p>
+<p><img src="images/PaperStats.png" class="img-fluid"></p>
 </section>
 <section id="b.-3" class="level2">
 <h2 class="anchored" data-anchor-id="b.-3">b.</h2>
 <p>I would say the authors did well in representing their statistics in figures. The figures adequately represent the linear regression and selectivity coefficients, as the x- and y- axes are in logical positions and the figures do show the underlying data in their model predictions. However, these figures do not include summary statistics.</p>
 </section>
-<section id="c.-2" class="level2">
-<h2 class="anchored" data-anchor-id="c.-2">c.</h2>
+<section id="c.-1" class="level2">
+<h2 class="anchored" data-anchor-id="c.-1">c.</h2>
 <p>I would say there is minimal “visual clutter” overall. I think the data to ink ratio is relatively high, as there are few elements that aren’t directly displaying the data.</p>
 </section>
 <section id="d.-2" class="level2">

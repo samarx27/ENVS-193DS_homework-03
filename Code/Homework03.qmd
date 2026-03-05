@@ -16,6 +16,7 @@ library(here) #loading in here
 library(janitor) #loading in janitor
 library(readxl) #loading in readxl
 library(ggeffects) #loading in ggeffects
+library(knitr) #loading in knitr
 salinity <- read_csv( #creating salinity data frame
   here( #indicating the path to find the data
     "data", #indicating it is in the data folder
@@ -144,11 +145,7 @@ I think an affective visualization could look be similar to figure two, where in
 
 ## b.
 
-![](images/Screenshot 2026-03-04 at 8.50.37 PM.png)
-
-## c.
-
-![](images/Screenshot 2026-03-04 at 8.51.19 PM.png)
+![](images/Screenshot%202026-03-04%20at%208.50.37%20PM.png) ![Alt text](path/to/Images/Screenshot%202026-03-04%20at%208.50.37%20PM.png) \## c. ![Alt text](path/to/Images/Screenshot%202026-03-04%20at%208.51.19%20PM.png)
 
 ## d.
 
@@ -164,7 +161,7 @@ This piece displays the time I wake up each day from 1/25/26 to 3/1/26. I was pr
 
 The test in this paper is a one-way ANOVA test, though it also includes multiple regressions, linear regressions, and pearson correlations. Seastar abundance was the response variable and the predictor variables were the linear rugosity, coral juvenile density, and average slope.
 
-![](images/Screenshot%202026-03-03%20at%206.30.19%20PM.png)
+![](images/PaperStats.png)
 
 ## b.
 
