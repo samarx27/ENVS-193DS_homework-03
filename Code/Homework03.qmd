@@ -35,6 +35,7 @@ my_data <- read_csv( #creating my_data data frame
 A Pearson's correlation test would determine the strength of the relationship between salinity and California pickleweed biomass because this type of correlation is meant for continuous variables. However, this also needs the data to be normally distributed. Alternatively, the strength of the relationship could be tested through a Spearman's rank correlation, which measures the strength and direction of the relationship between the variables and is usually used for non-parametric variables.
 
 ## b.
+
 ```{r}
 ggplot(data = salinity, #creating plot with salinity data frame
        aes(x = salinity_mS_cm, #salinity on the x axis
@@ -68,14 +69,16 @@ cor.test(salinity$salinity_mS_cm, #running correlation test using salinity data 
          salinity$pickleweed, #running correlation test using salinity data frame, specifically pickleweed column
          method = "pearson") #using pearson correlation 
 ```
-In the plot in 1b, the linear relationship between the two variables is tested and determined to exist. I used QQ plots for each column to test the normality condition, which was normal. In the correlation test above, which is a Pearson Correlation test, the strength of this relationship is tested and is determined to be of moderate strength (Pearson's r = 0.53, t(21) = 2.90, p = 0.009, $\alpha$ = 0.05). 
 
-## d. 
-To evaluate the assumption that the predictor variable (salinity) does not predict the response variable (pickleweed), I used a scatter plot, which indicated that there may be a positive relationship between the variables. To evaluate the strength of the relationship between pickleweed biomass and soil salinity, I used Pearson's Correlation test, which resulted in the variables having moderate strength relationship between the variables (Pearson's r = 0.53, t(21) = 2.90, p = 0.009, $\alpha$ = 0.05). 
+In the plot in 1b, the linear relationship between the two variables is tested and determined to exist. I used QQ plots for each column to test the normality condition, which was normal. In the correlation test above, which is a Pearson Correlation test, the strength of this relationship is tested and is determined to be of moderate strength (Pearson's r = 0.53, t(21) = 2.90, p = 0.009, $\alpha$ = 0.05).
+
+## d.
+
+To evaluate the assumption that the predictor variable (salinity) does not predict the response variable (pickleweed), I used a scatter plot, which indicated that there may be a positive relationship between the variables. To evaluate the strength of the relationship between pickleweed biomass and soil salinity, I used Pearson's Correlation test, which resulted in the variables having moderate strength relationship between the variables (Pearson's r = 0.53, t(21) = 2.90, p = 0.009, $\alpha$ = 0.05).
 
 ## e.
 
-Based on the data, pickleweed biomass in grams and salinity (mS/cm) have a positive relationship, meaning that, with higher salinity, there will be more biomass of pickleweed. This indicates that there will be a higher planting success at a site with higher salinity, though the strength of this relationship is only moderate. 
+Based on the data, pickleweed biomass in grams and salinity (mS/cm) have a positive relationship, meaning that, with higher salinity, there will be more biomass of pickleweed. This indicates that there will be a higher planting success at a site with higher salinity, though the strength of this relationship is only moderate.
 
 ## f.
 
@@ -84,7 +87,8 @@ cor.test(salinity$salinity_mS_cm, #running correlation test using salinity data 
          salinity$pickleweed, #running correlation test using salinity data frame, specifically pickleweed column
          method = "spearman") #using spearman correlation 
 ```
-Both tests (Pearson's Correlation and Spearman's Correlation) would have led me to make the same decision (rejecting the null hypothesis) because the correlation coefficients are similar values that are close to 0.6 and indicate a moderate strength relationship. 
+
+Both tests (Pearson's Correlation and Spearman's Correlation) would have led me to make the same decision (rejecting the null hypothesis) because the correlation coefficients are similar values that are close to 0.6 and indicate a moderate strength relationship.
 
 # Problem 2. Personal Data
 
@@ -123,6 +127,7 @@ subtitle = "03/01/2026") + #creating a subtitle
 theme_light() + #changing the theme to light
 theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1, size = 8)) #changing the text on the x-axis to be vertical and smaller 
 ```
+
 ## b.
 
 Figure 1. This figure shows the distribution of recorded wake up times between school days, which is denoted by the blue points, and non-school days, which is denoted by the red points. Additionally, the figure shows the medians and quartiles for each type of day, represented by the boxes and lines, indicating that the median wake up time is later on non-school days than on school days.
@@ -141,9 +146,11 @@ I think an affective visualization could look be similar to figure two, where in
 
 ## d.
 
-This piece displays the time I wake up each day from 1/25/26 to 3/1/26. I was primarily influenced by watercolor techniques, as it is a watercolor painting created by layering different colors. 
+This piece displays the time I wake up each day from 1/25/26 to 3/1/26. I was primarily influenced by watercolor techniques, as it is a watercolor painting created by layering different colors.
 
 ## e.
+
+[View](https://docs.google.com/presentation/d/1mKBJbtlXfGHhz_Z0tbn_-trYkfYS3WBz2s5MwbSDmE8/edit?usp=sharing)
 
 # Problem 4. Statistical Critique
 
@@ -151,15 +158,16 @@ This piece displays the time I wake up each day from 1/25/26 to 3/1/26. I was pr
 
 The test in this paper is a one-way ANOVA test, though it also includes multiple regressions, linear regressions, and pearson correlations. Seastar abundance was the response variable and the predictor variables were the linear rugosity, coral juvenile density, and average slope.
 
-![](images/Screenshot 2026-03-03 at 6.30.19 PM.png)
+![](images/Screenshot%202026-03-03%20at%206.30.19%20PM.png)
 
-## b. 
+## b.
 
-I would say the authors did well in representing their statistics in figures. The figures adequately represent the linear regression and selectivity coefficients, as the x- and y- axes are in logical positions and the figures do show the underlying data in their model predictions. However, these figures do not include summary statistics. 
+I would say the authors did well in representing their statistics in figures. The figures adequately represent the linear regression and selectivity coefficients, as the x- and y- axes are in logical positions and the figures do show the underlying data in their model predictions. However, these figures do not include summary statistics.
 
 ## c.
-I would say there is minimal "visual clutter" overall. I think the data to ink ratio is relatively high, as there are few elements that aren't directly displaying the data. 
+
+I would say there is minimal "visual clutter" overall. I think the data to ink ratio is relatively high, as there are few elements that aren't directly displaying the data.
 
 ## d.
 
-The authors could add more information to the caption, which would make the figures more digestible and bring clarity to the point of the figure. For figure 5, it might be beneficial to make the axes tick labels clearer. 
+The authors could add more information to the caption, which would make the figures more digestible and bring clarity to the point of the figure. For figure 5, it might be beneficial to make the axes tick labels clearer.
