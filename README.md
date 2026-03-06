@@ -9,4 +9,4 @@ What files are there? All code files are under the code folder, these are .qmd f
 
 What code is there, and what does it do? The files include code for creating different models, checking conditions of data sets, and correlation tests.
 
-Link to the repository [here]()
+Link to the repository [here](https://samarx27.github.io/ENVS-193DS_homework-03/Code/Homework03.html)
