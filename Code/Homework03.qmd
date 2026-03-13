@@ -160,7 +160,9 @@ I think an affective visualization could look be similar to figure two, where in
 
 ## d.
 
-This piece displays the time I wake up each day from 1/25/26 to 3/1/26, where the center line (between the yellow and blue) represents when I woke up on each day. The higher each peak, the later I woke up. I was primarily influenced by watercolor techniques, as it is a watercolor painting created by layering different colors.
+This piece displays the time I wake up each day from 1/25/26 to 3/1/26. The center line (between the yellow and blue) represents when I woke up on each day. The higher each peak, the later I woke up. Each green bar represents the weekend, as my primary question behind this data collection was: Does the time I wake up differ between school and non-school days? I was primarily influenced by watercolor techniques, as it is a watercolor painting created by layering different colors.
+
+\
 
 ## e.
 
