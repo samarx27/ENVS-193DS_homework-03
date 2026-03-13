@@ -96,7 +96,7 @@ cor.test(salinity$salinity_mS_cm, #running correlation test using salinity data 
          method = "spearman") #using spearman correlation 
 ```
 
-Both tests (Pearson's Correlation and Spearman's Correlation) would have led me to make the same decision (rejecting the null hypothesis) because the correlation coefficients are similar values that are close to 0.6 and indicate a moderate strength relationship.
+Both tests (Pearson's Correlation and Spearman's Correlation) would have led me to make the same decision (rejecting the null hypothesis) because the correlation coefficients are similar values that are close to 0.6 and indicate a moderate strength relationship. The Pearson's *r* for the Pearson's Correlation was 0.534 and the Spearman's $\rho$ for the Spearman's Correlation was 0.593.
 
 # Problem 2. Personal Data
 
@@ -105,7 +105,8 @@ Both tests (Pearson's Correlation and Spearman's Correlation) would have led me 
 ```{r}
 #| label: Jitter Plot displaying wake up time for school and non school days
 my_data_clean <- my_data |> #labeling new data frame
-clean_names() #cleaned names to only include lower case letters and underscores
+clean_names() |>  #cleaned names to only include lower case letters and underscores
+  mutate(date = as.Date(date, format = "%m/%d/%Y")) #altering the way the date is read in
 ggplot(data = my_data_clean, #using my_data_clean data frame
 aes(x = school_day_yes_no, #placing school_day_yes_no on the x-axis
 y = wake_up_time_hrs_min, #placing wake_up_time_hrs_min on the y-axis
@@ -132,21 +133,22 @@ labs(x = "Date", #labeling the x-axis
 y = "Wake Up time (hrs:min)", #labeling the y-axis
 title = "Wake Up Time for Each Day", #creating a title
 subtitle = "03/01/2026") + #creating a subtitle
+  scale_x_date(date_labels = "%m/%d/%Y", date_breaks = "1 day") + #added in the labels for the x axis to be every day in the above format
 theme_light() + #changing the theme to light
 theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1, size = 8)) #changing the text on the x-axis to be vertical and smaller 
 ```
 
 ## b.
 
-Figure 1. This figure shows the distribution of recorded wake up times between school days, which is denoted by the blue points, and non-school days, which is denoted by the red points. Additionally, the figure shows the medians and quartiles for each type of day, represented by the boxes and lines, indicating that the median wake up time is later on non-school days than on school days.
+**Figure 1.** This figure shows the distribution of recorded wake up times between school days, which is denoted by the blue points, and non-school days, which is denoted by the red points. Additionally, the figure shows the medians and quartiles for each type of day, represented by the boxes and lines, indicating that the median wake up time is later on non-school days than on school days.
 
-Figure 2. This figure shows the distribution of recorded wake up times for each day from 01/25/2026 to 03/01/2026, denoted by the gold points.
+**Figure 2.** This figure shows the distribution of recorded wake up times for each day from 01/25/2026 to 03/01/2026, denoted by the gold points.
 
 # Problem 3. Affective Visualization
 
 ## a.
 
-I think an affective visualization could look be similar to figure two, where instead of the points and axis, it could look like a sunrise where each point is supposed to fall, given that the data is showing when I wake up.
+I think an affective visualization could look be similar to figure two, where instead of the points and axis, it could look like a sunrise where each point is supposed to fall, given that the data is showing when I wake up. Each point is higher when I woke up later and the lines connect to form a wave-like structure to make it look similar to a sunrise.
 
 ## b.
 
@@ -158,7 +160,7 @@ I think an affective visualization could look be similar to figure two, where in
 
 ## d.
 
-This piece displays the time I wake up each day from 1/25/26 to 3/1/26. I was primarily influenced by watercolor techniques, as it is a watercolor painting created by layering different colors.
+This piece displays the time I wake up each day from 1/25/26 to 3/1/26, where the center line (between the yellow and blue) represents when I woke up on each day. The higher each peak, the later I woke up. I was primarily influenced by watercolor techniques, as it is a watercolor painting created by layering different colors.
 
 ## e.
 
@@ -178,8 +180,8 @@ I would say the authors did well in representing their statistics in figures. Th
 
 ## c.
 
-I would say there is minimal "visual clutter" overall. I think the data to ink ratio is relatively high, as there are few elements that aren't directly displaying the data.
+I would say there is minimal "visual clutter" overall. In the first image, there are lines that show the trend of the data and the data points themselves, which is visually effective and aids in comparison of the different variables. The second image could be condensed, as the bars are far apart creating lots of empty space. For both visualizations, the ticks on the axes could be larger for readability. I think the data to ink ratio is relatively high, as there are few elements that aren't directly displaying the data, despite the presence of some empty space.
 
 ## d.
 
-The authors could add more information to the caption, which would make the figures more digestible and bring clarity to the point of the figure. For figure 5, it might be beneficial to make the axes tick labels clearer.
+The authors could add more information to the caption, which would make the figures more digestible and bring clarity to the point of the figure. This would also allow for readers to understand the scale for different variables, such as what values led to the labeling of average slope. For figure 5, it might be beneficial to make the axes tick labels clearer by making them larger, which would increase readability. For the second figure, the bars could be closer together to reduce unnecessary empty space and make comparisons clearer.
