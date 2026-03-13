@@ -302,7 +302,7 @@ sample estimates:
 0.5928854 </code></pre>
 </div>
 </div>
-<p>Both tests (Pearson’s Correlation and Spearman’s Correlation) would have led me to make the same decision (rejecting the null hypothesis) because the correlation coefficients are similar values that are close to 0.6 and indicate a moderate strength relationship.</p>
+<p>Both tests (Pearson’s Correlation and Spearman’s Correlation) would have led me to make the same decision (rejecting the null hypothesis) because the correlation coefficients are similar values that are close to 0.6 and indicate a moderate strength relationship. The Pearson’s <em>r</em> for the Pearson’s Correlation was 0.534 and the Spearman’s <span class="math inline">\(\rho\)</span> for the Spearman’s Correlation was 0.593.</p>
 </section>
 </section>
 <section id="problem-2.-personal-data" class="level1">
@@ -311,21 +311,22 @@ sample estimates:
 <h2 class="anchored" data-anchor-id="a.-1">a.</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>my_data_clean <span class="ot">&lt;-</span> my_data <span class="sc">|&gt;</span> <span class="co">#labeling new data frame</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clean_names</span>() <span class="co">#cleaned names to only include lower case letters and underscores</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> my_data_clean, <span class="co">#using my_data_clean data frame</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">aes</span>(<span class="at">x =</span> school_day_yes_no, <span class="co">#placing school_day_yes_no on the x-axis</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="at">y =</span> wake_up_time_hrs_min, <span class="co">#placing wake_up_time_hrs_min on the y-axis</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="at">color =</span> school_day_yes_no)) <span class="sc">+</span> <span class="co">#color by school_day_yes_no</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_boxplot</span>() <span class="sc">+</span> <span class="co">#creating a boxplot</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"School Day"</span>, <span class="co">#labeling the x-axis as School Day</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="at">y =</span> <span class="st">"Wake Up time (hrs:min)"</span>, <span class="co">#labeling the y-axis as Wake Up time (hrs:min)</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="at">title =</span> <span class="st">"Wake Up Time for School Days vs Non-School Days"</span>, <span class="co">#creating title</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="at">subtitle =</span> <span class="st">"03/01/2026"</span>) <span class="sc">+</span> <span class="co">#creating subtitle</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_jitter</span>() <span class="sc">+</span> <span class="co">#creating jittered points</span></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_light</span>() <span class="sc">+</span> <span class="co">#changing theme to light</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"yes"</span> <span class="ot">=</span> <span class="st">"blue4"</span>,</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="st">"no"</span> <span class="ot">=</span> <span class="st">"red4"</span>)) <span class="sc">+</span> <span class="co">#changing colors based on whether or not it is a school day</span></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="co">#removing the legend</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">clean_names</span>() <span class="sc">|&gt;</span>  <span class="co">#cleaned names to only include lower case letters and underscores</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(date, <span class="at">format =</span> <span class="st">"%m/%d/%Y"</span>)) <span class="co">#altering the way the date is read in</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> my_data_clean, <span class="co">#using my_data_clean data frame</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">aes</span>(<span class="at">x =</span> school_day_yes_no, <span class="co">#placing school_day_yes_no on the x-axis</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="at">y =</span> wake_up_time_hrs_min, <span class="co">#placing wake_up_time_hrs_min on the y-axis</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="at">color =</span> school_day_yes_no)) <span class="sc">+</span> <span class="co">#color by school_day_yes_no</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_boxplot</span>() <span class="sc">+</span> <span class="co">#creating a boxplot</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"School Day"</span>, <span class="co">#labeling the x-axis as School Day</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="at">y =</span> <span class="st">"Wake Up time (hrs:min)"</span>, <span class="co">#labeling the y-axis as Wake Up time (hrs:min)</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="at">title =</span> <span class="st">"Wake Up Time for School Days vs Non-School Days"</span>, <span class="co">#creating title</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="at">subtitle =</span> <span class="st">"03/01/2026"</span>) <span class="sc">+</span> <span class="co">#creating subtitle</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_jitter</span>() <span class="sc">+</span> <span class="co">#creating jittered points</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_light</span>() <span class="sc">+</span> <span class="co">#changing theme to light</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"yes"</span> <span class="ot">=</span> <span class="st">"blue4"</span>,</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="st">"no"</span> <span class="ot">=</span> <span class="st">"red4"</span>)) <span class="sc">+</span> <span class="co">#changing colors based on whether or not it is a school day</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>) <span class="co">#removing the legend</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -343,8 +344,9 @@ sample estimates:
 <span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="at">y =</span> <span class="st">"Wake Up time (hrs:min)"</span>, <span class="co">#labeling the y-axis</span></span>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="at">title =</span> <span class="st">"Wake Up Time for Each Day"</span>, <span class="co">#creating a title</span></span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="at">subtitle =</span> <span class="st">"03/01/2026"</span>) <span class="sc">+</span> <span class="co">#creating a subtitle</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_light</span>() <span class="sc">+</span> <span class="co">#changing the theme to light</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">8</span>)) <span class="co">#changing the text on the x-axis to be vertical and smaller </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">"%m/%d/%Y"</span>, <span class="at">date_breaks =</span> <span class="st">"1 day"</span>) <span class="sc">+</span> <span class="co">#added in the labels for the x axis to be every day in the above format</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_light</span>() <span class="sc">+</span> <span class="co">#changing the theme to light</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>, <span class="at">size =</span> <span class="dv">8</span>)) <span class="co">#changing the text on the x-axis to be vertical and smaller </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -356,15 +358,15 @@ sample estimates:
 </section>
 <section id="b.-1" class="level2">
 <h2 class="anchored" data-anchor-id="b.-1">b.</h2>
-<p>Figure 1. This figure shows the distribution of recorded wake up times between school days, which is denoted by the blue points, and non-school days, which is denoted by the red points. Additionally, the figure shows the medians and quartiles for each type of day, represented by the boxes and lines, indicating that the median wake up time is later on non-school days than on school days.</p>
-<p>Figure 2. This figure shows the distribution of recorded wake up times for each day from 01/25/2026 to 03/01/2026, denoted by the gold points.</p>
+<p><strong>Figure 1.</strong> This figure shows the distribution of recorded wake up times between school days, which is denoted by the blue points, and non-school days, which is denoted by the red points. Additionally, the figure shows the medians and quartiles for each type of day, represented by the boxes and lines, indicating that the median wake up time is later on non-school days than on school days.</p>
+<p><strong>Figure 2.</strong> This figure shows the distribution of recorded wake up times for each day from 01/25/2026 to 03/01/2026, denoted by the gold points.</p>
 </section>
 </section>
 <section id="problem-3.-affective-visualization" class="level1">
 <h1>Problem 3. Affective Visualization</h1>
 <section id="a.-2" class="level2">
 <h2 class="anchored" data-anchor-id="a.-2">a.</h2>
-<p>I think an affective visualization could look be similar to figure two, where instead of the points and axis, it could look like a sunrise where each point is supposed to fall, given that the data is showing when I wake up.</p>
+<p>I think an affective visualization could look be similar to figure two, where instead of the points and axis, it could look like a sunrise where each point is supposed to fall, given that the data is showing when I wake up. Each point is higher when I woke up later and the lines connect to form a wave-like structure to make it look similar to a sunrise.</p>
 </section>
 <section id="b.-2" class="level2">
 <h2 class="anchored" data-anchor-id="b.-2">b.</h2>
@@ -376,7 +378,7 @@ sample estimates:
 </section>
 <section id="d.-1" class="level2">
 <h2 class="anchored" data-anchor-id="d.-1">d.</h2>
-<p>This piece displays the time I wake up each day from 1/25/26 to 3/1/26. I was primarily influenced by watercolor techniques, as it is a watercolor painting created by layering different colors.</p>
+<p>This piece displays the time I wake up each day from 1/25/26 to 3/1/26, where the center line (between the yellow and blue) represents when I woke up on each day. The higher each peak, the later I woke up. I was primarily influenced by watercolor techniques, as it is a watercolor painting created by layering different colors.</p>
 </section>
 <section id="e.-1" class="level2">
 <h2 class="anchored" data-anchor-id="e.-1">e.</h2>
@@ -396,11 +398,11 @@ sample estimates:
 </section>
 <section id="c.-2" class="level2">
 <h2 class="anchored" data-anchor-id="c.-2">c.</h2>
-<p>I would say there is minimal “visual clutter” overall. I think the data to ink ratio is relatively high, as there are few elements that aren’t directly displaying the data.</p>
+<p>I would say there is minimal “visual clutter” overall. In the first image, there are lines that show the trend of the data and the data points themselves, which is visually effective and aids in comparison of the different variables. The second image could be condensed, as the bars are far apart creating lots of empty space. For both visualizations, the ticks on the axes could be larger for readability. I think the data to ink ratio is relatively high, as there are few elements that aren’t directly displaying the data, despite the presence of some empty space.</p>
 </section>
 <section id="d.-2" class="level2">
 <h2 class="anchored" data-anchor-id="d.-2">d.</h2>
-<p>The authors could add more information to the caption, which would make the figures more digestible and bring clarity to the point of the figure. For figure 5, it might be beneficial to make the axes tick labels clearer.</p>
+<p>The authors could add more information to the caption, which would make the figures more digestible and bring clarity to the point of the figure. This would also allow for readers to understand the scale for different variables, such as what values led to the labeling of average slope. For figure 5, it might be beneficial to make the axes tick labels clearer by making them larger, which would increase readability. For the second figure, the bars could be closer together to reduce unnecessary empty space and make comparisons clearer.</p>
 </section>
 </section>
 
