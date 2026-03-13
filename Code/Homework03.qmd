@@ -148,7 +148,7 @@ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1, size = 8)) 
 
 ## a.
 
-I think an affective visualization could look be similar to figure two, where instead of the points and axis, it could look like a sunrise where each point is supposed to fall, given that the data is showing when I wake up. Each point is higher when I woke up later and the lines connect to form a wave-like structure to make it look similar to a sunrise.
+I think an affective visualization could look be similar to figure two of my data, where instead of the points and axis, it could look like a sunrise where each point is supposed to fall, given that the data is showing when I wake up. Each point is higher when I woke up later and the lines connect to form a wave-like structure to make it look similar to a sunrise.
 
 ## b.
 
